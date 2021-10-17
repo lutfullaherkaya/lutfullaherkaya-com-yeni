@@ -22,6 +22,12 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        // TODO: burayı gerektiği zaman sil falan veya düzenle
+        \App\Models\User::create([
+            "name" => "Yönetici",
+            "email" => "yonetici@yonetim.com",
+            "password" => \Illuminate\Support\Facades\Hash::make("yonetici"),
+        ]);
     }
 
     /**
